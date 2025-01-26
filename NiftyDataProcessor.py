@@ -29,7 +29,7 @@ class NiftyDataProcessor:
     def read_filtered_data(self, filepath="filtered_nifty50.csv"):
         return pd.read_csv(filepath)
 
-    def get_top_10_symbols_for_period(self, period, filepath="data/filtered_nifty50.csv"):
+    def get_top_symbols_for_period(self, period, filepath="data/filtered_nifty50.csv"):
         df = self.read_filtered_data(filepath)
         df = df.iloc[::-1]
         df = df.groupby('CH_SYMBOL').apply(lambda x: x['CH_CLOSING_PRICE'].pct_change(periods=period) * 100)
