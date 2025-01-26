@@ -25,13 +25,12 @@ class NiftyDataProcessor:
                 print(f"Required columns not found for symbol {symbol}")
 
         filtered_df = pd.concat(filtered_dfs)
-        print(filtered_df)
-        # filtered_df.to_csv("filtered_nifty50.csv", index=False)
+        filtered_df.to_csv("filtered_nifty500.csv", index=False)
 
-    def read_clean_data(self, filepath="filtered_nifty50.csv"):
+    def read_clean_data(self, filepath="filtered_nifty500.csv"):
         return pd.read_csv(filepath)
 
-    def get_top_symbols_for_period(self, period, filepath="data/filtered_nifty50.csv"):
+    def get_top_symbols_for_period(self, period, filepath="data/filtered_nifty500.csv"):
         df = self.read_clean_data(filepath)
         df = df.iloc[::-1]
         df = df.groupby('CH_SYMBOL').apply(lambda x: x['CH_CLOSING_PRICE'].pct_change(periods=period) * 100)

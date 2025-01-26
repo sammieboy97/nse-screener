@@ -47,6 +47,10 @@ This project is licensed under the Apache License 2.0. See the [LICENSE](LICENSE
 - [nsepython](https://github.com/vsjha18/nsepython) for providing the NSE data API.
 - The open-source community for their invaluable contributions.
 
+## Visitors
+![Visitor Count](https://visitor-badge.glitch.me/badge?page_id=sammieboy97.nse-screener)
+
+
 ## Contact
 For any inquiries or support, please contact [samueljohnson01997@gmail.com](mailto:samueljohnson01997@gmail.com).
 
