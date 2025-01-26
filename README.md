@@ -24,9 +24,9 @@
 
 ## Example
 To filter data and get the top 10 symbols for a period of 100 days:
-1. Uncomment the `create_filtered_data` line in `main.py` if you want to get newer data along with changing the dates.
+1. Uncomment the `create_clean_data` line in `main.py` if you want to get newer data along with changing the dates.
     * Run the script to generate `filtered_nifty50.csv`.
-3. Comment the `create_filtered_data` line and uncomment the `get_top_symbols_for_period` line.
+3. Comment the `create_clean_data` line and uncomment the `get_top_symbols_for_period` line.
 4. Run the script again to get the top symbols.
 
 ## Future Plans
