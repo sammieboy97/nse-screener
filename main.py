@@ -1,17 +1,18 @@
 from NiftyDataLoader import NiftyDataLoader
-from NiftyDataProcessor import NiftyDataProcessor
+from data_processor import DataProcessor
+from strategy.momentum_strategy import MomentumStrategy
 
 def main():
     loader = NiftyDataLoader(csv_path="data/ind_nifty500list.csv")
-    processor = NiftyDataProcessor()
+    strategy = MomentumStrategy(period = 100)
+    processor = DataProcessor(loader, strategy)
 
     clean_data_path = "data/filtered_nifty500.csv"
     # The below line is commented as the clean data for nifty500list.csv is created. If need a new one, uncomment and get the data
     # loader.create_clean_data(clean_data_path)
 
-    df = loader.read_clean_data(filepath=clean_data_path)
-    
-    processor.get_top_symbols_for_period(100, df)
+    top_symbols = processor.process(clean_data_path)
+    print(top_symbols)
 
 
 if __name__ == "__main__":
