@@ -3,11 +3,11 @@ from NiftyDataProcessor import NiftyDataProcessor
 
 def main():
     loader = NiftyDataLoader(csv_path="data/ind_nifty500list.csv")
-    processor = NiftyDataProcessor(loader)
+    processor = NiftyDataProcessor()
 
     clean_data_path = "data/filtered_nifty500.csv"
     # The below line is commented as the clean data for nifty500list.csv is created. If need a new one, uncomment and get the data
-    # processor.create_clean_data(clean_data_path)
+    # loader.create_clean_data(clean_data_path)
 
     df = loader.read_clean_data(filepath=clean_data_path)
     
