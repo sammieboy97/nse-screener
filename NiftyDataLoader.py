@@ -11,3 +11,6 @@ class NiftyDataLoader:
     def get_symbols(self):
         data = self.load_data()
         return data[self.symbols_column]
+    
+    def read_clean_data(self, filepath="data/filtered_nifty500.csv"):
+        return pd.read_csv(filepath)
