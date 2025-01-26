@@ -9,7 +9,7 @@
 ## Installation
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/nse-screener.git
+   git clone https://github.com/sammieboy97/nse-screener.git
    cd nse-screener
 2. Install the required dependencies:
     ```pip install -r requirements.txt```
@@ -48,7 +48,7 @@ This project is licensed under the Apache License 2.0. See the [LICENSE](LICENSE
 - The open-source community for their invaluable contributions.
 
 ## Contact
-For any inquiries or support, please contact [your-email@example.com](mailto:your-email@example.com).
+For any inquiries or support, please contact [samueljohnson01997@gmail.com](mailto:samueljohnson01997@gmail.com).
 
 ---
 
