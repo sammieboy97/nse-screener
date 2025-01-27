@@ -25,7 +25,7 @@ class NiftyDataLoader:
             df = equity_history(symbol, series, start_date, end_date)
 
             if 'CH_CLOSING_PRICE' in df.columns and 'CH_SYMBOL' in df.columns:
-                df = df[['CH_CLOSING_PRICE', 'CH_SYMBOL', 'CH_TIMESTAMP']]
+                df = df[['CH_CLOSING_PRICE', 'CH_SYMBOL', 'mTIMESTAMP']]
                 df['Percentage_Diff'] = df['CH_CLOSING_PRICE'].pct_change() * 100
                 df['Greater_Than_30'] = df['Percentage_Diff'].abs() > 30
 
