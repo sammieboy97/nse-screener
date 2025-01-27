@@ -6,10 +6,10 @@ class DataProcessor:
         self.strategy = strategy
         self.clean_data_path = clean_data_path
 
-    def processTop(self, instrument_count = 10):
+    def screen_top(self, instrument_count = 10, snapshot__back_in_days = 1):
         df = self.loader.read_clean_data(self.clean_data_path)
-        return self.strategy.screen_top(df, instrument_count)
+        return self.strategy.screen_top(df, instrument_count, snapshot__back_in_days)
     
-    def processBottom(self, instrument_count = 10):
+    def screen_bottom(self, instrument_count = 10, snapshot__back_in_days = 1):
         df = self.loader.read_clean_data(self.clean_data_path)
-        return self.strategy.screen_bottom(df, instrument_count)
+        return self.strategy.screen_bottom(df, instrument_count, snapshot__back_in_days)

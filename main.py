@@ -13,7 +13,7 @@ def main():
     strategy = MomentumStrategy(periods=periods)
     processor = DataProcessor(loader=loader, strategy=strategy, clean_data_path=clean_data_path)
 
-    top_stocks = processor.processTop(12)
+    top_stocks = processor.screen_top(10, snapshot__back_in_days=1)
     print(top_stocks)
 
 if __name__ == "__main__":
