@@ -9,22 +9,12 @@ def main():
     # The below line is commented as the clean data for nifty500list.csv is created. If need a new one, uncomment and get the data
     # loader.create_clean_data(clean_data_path)
 
-    df = loader.read_clean_data(filepath=clean_data_path)
     periods = [100, 75, 50, 25]
-    top_symbols_dict = {}
+    strategy = MomentumStrategy(periods=periods)
+    processor = DataProcessor(loader=loader, strategy=strategy, clean_data_path=clean_data_path)
 
-    for period in periods:
-        strategy = MomentumStrategy(period=period)
-        top_symbols = strategy.screen_top(df)
-        top_symbols_dict[period] = top_symbols
-
-        print(f"\nTop Symbols for period {period}\n")
-        print(top_symbols)
-
-    # Convert the dictionary to a DataFrame with symbols and percentage values
-    top_symbols_df = pd.concat(top_symbols_dict, axis=1)
-    print("\nTop Symbols DataFrame\n")
-    print(top_symbols_df)
+    top_stocks = processor.processTop(12)
+    print(top_stocks)
 
 if __name__ == "__main__":
     main()
